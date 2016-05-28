@@ -2,6 +2,7 @@ package com.example.user.mycalc0528;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -30,8 +31,9 @@ public class MainActivity extends Activity {
         etNum2 = (EditText) findViewById(R.id.Input2);
 //        resS1 = etNum1.getText().toString();
 //        resS2 = etNum2.getText().toString();
-        num1 = Integer.parseInt(etNum1.toString());
-        num2 = Integer.parseInt(etNum2.toString());
+        num1 = Integer.parseInt(etNum1.getText().toString());
+//        System.out.println(etNum1.getText().toString());
+        num2 = Integer.parseInt(etNum2.getText().toString());
 
         btPlus = (Button) findViewById(R.id.btPlus);
         btMinus = (Button) findViewById(R.id.btMinus);
