@@ -16,28 +16,34 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-    Button btPlus;
-    Button btMinus;
-    Button btMuti;
-    Button btDevide;
-    Button btMod;
-    TextView etNum1;
-    TextView etNum2;
+    Button btPlus, btMinus, btMuti, btDevide, btMod;
+    EditText etNum1, etNum2;
     TextView Resultvalue1;
-
+    String resS1, resS2;
+    Integer res1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.setTitle("간단계산 EHLEE");
-//        etNum1 = (EditText) findViewById(R.id.Input1);
-//        etNum2 = (EditText) findViewById(R.id.Input2);
+        etNum1 = (EditText) findViewById(R.id.Input1);
+        etNum2 = (EditText) findViewById(R.id.Input2);
+        resS1 = etNum1.getText().toString();
+        resS2 = etNum2.getText().toString();
+
         btPlus = (Button) findViewById(R.id.btPlus);
+        btMinus = (Button) findViewById(R.id.btMinus);
+        btMuti = (Button) findViewById(R.id.btMuti);
+        btDevide = (Button) findViewById(R.id.btDivide);
+        btMod = (Button) findViewById(R.id.btMod);
+        Resultvalue1 = (TextView) findViewById(R.id.resultValue);
+
+        res1 = Integer.parseInt(resS1)+Integer.parseInt(resS2);
 
         btPlus.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Resultvalue1.setText("계산결과 >> " + etNum1+etNum2);
+                Resultvalue1.setText("계산결과 >> " + res1.toString());
                 return false;
             }
         });
